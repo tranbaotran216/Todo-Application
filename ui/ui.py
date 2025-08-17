@@ -76,6 +76,10 @@ with gr.Blocks() as demo:
         refresh, outputs=checklist
     )
 
+    checklist.change(handle_update, inputs=checklist, ouputs=status).then(
+        refresh, outputs=checklist
+    )
+
     demo.load(refresh, outputs=checklist)
 
 demo.launch()
